@@ -1,0 +1,14 @@
+#UPPGIFT 1
+fprim=@(x,y) -((1/7)+(pi*sin(pi*x))/(1.6-cos(pi*x))).*y;
+x0=0; xslut=4; y0=2.5; h=0.5/s;
+x=x0; xx=x0; y=y0; yy=y0;
+n=(xslut-x0)./h
+
+for i=1:n;
+    yprim=fprim(x,y);
+    y=y+h*yprim;
+    x=x+h;
+    xx=[xx;x]; yy=[yy;y];
+end;
+yslut=y
+plot(xx,yy)
